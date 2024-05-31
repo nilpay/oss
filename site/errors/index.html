@@ -9,18 +9,22 @@
       
       
       
+        <link rel="prev" href="../cashout/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../get_user/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
     
     
       
-        <title>Nilpay API Docs</title>
+        <title>Errors - Nilpay API Docs</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
       
       
 
@@ -39,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -57,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#error-handling" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -69,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Nilpay API Docs" class="md-header__button md-logo" aria-label="Nilpay API Docs" data-md-component="logo">
+    <a href=".." title="Nilpay API Docs" class="md-header__button md-logo" aria-label="Nilpay API Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -89,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Errors
             
           </span>
         </div>
@@ -164,7 +173,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Nilpay API Docs" class="md-nav__button md-logo" aria-label="Nilpay API Docs" data-md-component="logo">
+    <a href=".." title="Nilpay API Docs" class="md-nav__button md-logo" aria-label="Nilpay API Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -182,7 +191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -202,7 +211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/cashout/" class="md-nav__link">
+      <a href="../cashout/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -219,10 +228,28 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/errors/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Errors
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -231,6 +258,66 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-error-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Error Response:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Error Codes:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nil-error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nil Error Codes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -242,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/get_user/" class="md-nav__link">
+      <a href="../get_user/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -262,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/keys_mgmt/" class="md-nav__link">
+      <a href="../keys_mgmt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -282,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/responses/" class="md-nav__link">
+      <a href="../responses/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -302,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/security/" class="md-nav__link">
+      <a href="../security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -322,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/status/" class="md-nav__link">
+      <a href="../status/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -342,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/topup/" class="md-nav__link">
+      <a href="../topup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -362,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/versioning/" class="md-nav__link">
+      <a href="../versioning/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -382,7 +469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vpn/" class="md-nav__link">
+      <a href="../vpn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -402,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/webhooks/" class="md-nav__link">
+      <a href="../webhooks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -433,6 +520,56 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-error-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Error Response:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Error Codes:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nil-error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nil Error Codes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -443,8 +580,138 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  <h1>Errors</h1>
+
+<h2 id="error-handling"><strong>Error Handling</strong></h2>
+<h3 id="standard-error-response"><strong>Standard Error Response:</strong></h3>
+<pre><code class="language-json">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;code&quot;: &quot;string&quot;,
+    &quot;message&quot;: &quot;string&quot;,
+    &quot;details&quot;: &quot;string&quot;,
+    &quot;timestamp&quot;: &quot;string&quot;,
+    &quot;uuid&quot;: &quot;string&quot;,
+    &quot;signed_uuid&quot;: &quot;string&quot;
+}
+</code></pre>
+<h3 id="common-error-codes"><strong>Common Error Codes:</strong></h3>
+<ul>
+<li><strong>insufficient_balance</strong><ul>
+<li>Message: "Insufficient balance to complete the transaction."</li>
+<li>Details: "The user does not have enough balance in their account."</li>
+<li>Resolution: "Ensure the user has sufficient funds before retrying the transaction."</li>
+</ul>
+</li>
+<li><strong>transaction_not_found</strong><ul>
+<li>Message: "Transaction ID not found."</li>
+<li>Details: "The specified transaction ID does not exist."</li>
+<li>Resolution: "Verify the transaction ID and try again."</li>
+</ul>
+</li>
+<li><strong>invalid_uuid</strong><ul>
+<li>Message: "Invalid UUID format."</li>
+<li>Details: "The provided UUID does not conform to the required format."</li>
+<li>Resolution: "Check the UUID format and correct it before retrying."</li>
+</ul>
+</li>
+<li><strong>permission_denied</strong><ul>
+<li>Message: "User does not have permission to perform this operation."</li>
+<li>Details: "The authenticated user is not authorized to perform this operation."</li>
+<li>Resolution: "Ensure the user has the necessary permissions before retrying."</li>
+</ul>
+</li>
+<li><strong>invalid_transaction_id</strong><ul>
+<li>Message: "Invalid transaction ID."</li>
+<li>Details: "The provided transaction ID is invalid."</li>
+<li>Resolution: "Check the transaction ID and correct it before retrying."</li>
+</ul>
+</li>
+<li><strong>key_generation_failed</strong><ul>
+<li>Message: "Unable to generate keys due to server error."</li>
+<li>Details: "An internal server error occurred while attempting to generate keys."</li>
+<li>Resolution: "Try again later. If the problem persists, contact support."</li>
+</ul>
+</li>
+<li><strong>key_rotation_failed</strong><ul>
+<li>Message: "Unable to rotate keys due to server error."</li>
+<li>Details: "An internal server error occurred while attempting to rotate keys."</li>
+<li>Resolution: "Try again later. If the problem persists, contact support."</li>
+</ul>
+</li>
+</ul>
+<h2 id="nil-error-codes"><strong>Nil Error Codes</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Error Code</th>
+<th>Description</th>
+<th>Potential Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>insufficient_balance</td>
+<td>Insufficient balance to complete the transaction.</td>
+<td>Ensure the user has sufficient funds before retrying the transaction.</td>
+</tr>
+<tr>
+<td>transaction_not_found</td>
+<td>The specified transaction ID does not exist.</td>
+<td>Verify the transaction ID and try again.</td>
+</tr>
+<tr>
+<td>invalid_uuid</td>
+<td>The provided UUID does not conform to the required format.</td>
+<td>Check the UUID format and correct it before retrying.</td>
+</tr>
+<tr>
+<td>permission_denied</td>
+<td>The authenticated user is not authorized to perform this operation.</td>
+<td>Ensure the user has the necessary permissions before retrying.</td>
+</tr>
+<tr>
+<td>invalid_transaction_id</td>
+<td>The provided transaction ID is invalid.</td>
+<td>Check the transaction ID and correct it before retrying.</td>
+</tr>
+<tr>
+<td>key_generation_failed</td>
+<td>An internal server error occurred while attempting to generate keys.</td>
+<td>Try again later. If the problem persists, contact support.</td>
+</tr>
+<tr>
+<td>key_rotation_failed</td>
+<td>An internal server error occurred while attempting to rotate keys.</td>
+<td>Try again later. If the problem persists, contact support.</td>
+</tr>
+<tr>
+<td>bad_request</td>
+<td>Malformed request. Potentially missing some fields.</td>
+<td>Refer to API docs.</td>
+</tr>
+<tr>
+<td>internal_error</td>
+<td>A generic error for all server-specific errors.</td>
+<td>This indicates a service error at Nil.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -478,10 +745,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.081f42fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.081f42fc.min.js"></script>
       
     
   </body>

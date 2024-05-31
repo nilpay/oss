@@ -9,18 +9,20 @@
       
       
       
+        <link rel="prev" href="../vpn/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
     
     
       
-        <title>Nilpay API Docs</title>
+        <title>Webhooks - Nilpay API Docs</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
       
       
 
@@ -39,7 +41,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -57,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#web-hooks" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -69,7 +76,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Nilpay API Docs" class="md-header__button md-logo" aria-label="Nilpay API Docs" data-md-component="logo">
+    <a href=".." title="Nilpay API Docs" class="md-header__button md-logo" aria-label="Nilpay API Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -89,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Webhooks
             
           </span>
         </div>
@@ -164,7 +171,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Nilpay API Docs" class="md-nav__button md-logo" aria-label="Nilpay API Docs" data-md-component="logo">
+    <a href=".." title="Nilpay API Docs" class="md-nav__button md-logo" aria-label="Nilpay API Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -182,7 +189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -202,7 +209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/cashout/" class="md-nav__link">
+      <a href="../cashout/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -222,7 +229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/errors/" class="md-nav__link">
+      <a href="../errors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -242,7 +249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/get_user/" class="md-nav__link">
+      <a href="../get_user/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -262,7 +269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/keys_mgmt/" class="md-nav__link">
+      <a href="../keys_mgmt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -282,7 +289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/responses/" class="md-nav__link">
+      <a href="../responses/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -302,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/security/" class="md-nav__link">
+      <a href="../security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -322,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/status/" class="md-nav__link">
+      <a href="../status/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -342,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/topup/" class="md-nav__link">
+      <a href="../topup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -362,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/versioning/" class="md-nav__link">
+      <a href="../versioning/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -382,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vpn/" class="md-nav__link">
+      <a href="../vpn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -399,10 +406,28 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/webhooks/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Webhooks
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -411,6 +436,48 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#web-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web Hooks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web Hooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-web-hook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Register Web Hook
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -433,6 +500,38 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#web-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web Hooks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web Hooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-web-hook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Register Web Hook
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -443,8 +542,83 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  <h1>Webhooks</h1>
+
+<h2 id="web-hooks"><strong>Web Hooks</strong></h2>
+<h3 id="register-web-hook"><strong>Register Web Hook</strong></h3>
+<p>To receive updates about transaction status changes, you need to register a web hook URL with us.</p>
+<p><strong>Registration Process:</strong></p>
+<ol>
+<li><strong>URL Registration:</strong><ul>
+<li>Provide your endpoint URL where you wish to receive updates.</li>
+<li>Specify the event types you want to subscribe to (e.g., <code>transaction_completed</code>).</li>
+</ul>
+</li>
+</ol>
+<p><strong>Request Example:</strong></p>
+<pre><code class="language-json">{
+    &quot;endpoint_url&quot;: &quot;https://example.com/webhook&quot;,
+    &quot;event_type&quot;: &quot;transaction_completed&quot;,
+    &quot;service_provider&quot;: &quot;string&quot;,
+    &quot;uuid&quot;: &quot;string&quot;,
+    &quot;signed_uuid&quot;: &quot;string&quot;
+}
+</code></pre>
+<p><strong>Response Example:</strong></p>
+<pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;code&quot;: &quot;webhook_registered&quot;,
+    &quot;message&quot;: &quot;Web hook registered successfully.&quot;,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;uuid_001&quot;,
+        &quot;signed_uuid&quot;: &quot;signed_uuid_001&quot;,
+        &quot;service_provider&quot;: &quot;249_111&quot;
+    }
+}
+</code></pre>
+<ol>
+<li><strong>On Transaction Completion:</strong><ul>
+<li>When a transaction is completed, we will send a POST request to your registered URL with the following fields:</li>
+</ul>
+</li>
+</ol>
+<p><strong>Request Body Example:</strong></p>
+<pre><code class="language-json">{
+    &quot;transaction_id&quot;: &quot;string&quot;,
+    &quot;status&quot;: &quot;string&quot;,
+    &quot;message&quot;: &quot;string&quot;,
+    &quot;updated_at&quot;: &quot;string&quot;,
+    &quot;uuid&quot;: &quot;string&quot;,
+    &quot;signed_uuid&quot;: &quot;string&quot;
+}
+</code></pre>
+<p><strong>Response Example:</strong></p>
+<pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;code&quot;: &quot;webhook_received&quot;,
+    &quot;message&quot;: &quot;Webhook received successfully.&quot;,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;uuid_001&quot;,
+        &quot;signed_uuid&quot;: &quot;signed_uuid_001&quot;
+    }
+}
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -478,10 +652,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.081f42fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.081f42fc.min.js"></script>
       
     
   </body>
