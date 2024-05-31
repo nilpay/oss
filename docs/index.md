@@ -341,7 +341,7 @@ To receive updates about transaction status changes, you need to register a web 
         "signed_uuid": "signed_uuid_001"
     }
 }
-    ```
+```
     
 - **Error Response Example:**
     

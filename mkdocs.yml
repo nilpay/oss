@@ -1,2 +1,61 @@
 site_name: Nilpay API Docs
-theme: material
+site_url: https://pynil.com
+site_description: Documentation for Nil Ledger
+site_author: Nilpay Team
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.expand
+    - navigation.tabs
+    - toc.integrate
+    - search.highlight
+    - content.code.annotate
+    - content.tabs.link
+    - content.tabs.local
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  logo: assets/images/logo.png
+  favicon: assets/images/favicon.ico
+
+nav:
+  - Home: index.md
+  - API:
+      - Overview: overview.md
+      - Reference: index.md
+
+plugins:
+  - search
+  - mkdocstrings
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - toc
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+  - pymdownx.highlight
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-username/your-repo
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/your-username
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/your-username
+
+  donations:
+    - platform: paypal
+      url: https://www.paypal.com/donate?hosted_button_id=YOUR_BUTTON_ID
+    - platform: ko-fi
+      url: https://ko-fi.com/your-username
+    - platform: patreon
+      url: https://www.patreon.com/your-username

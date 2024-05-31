@@ -54,7 +54,7 @@
         "signed_uuid": "signed_uuid_001"
     }
 }
-    ```
+```
     
 - **Error Response Example:**
     

@@ -6,23 +6,32 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Documentation for Nil Ledger">
+      
+      
+        <meta name="author" content="Nilpay Team">
+      
+      
+        <link rel="canonical" href="https://pynil.com/">
+      
+      
+        <link rel="prev" href=".">
       
       
       
-      
-        <link rel="next" href="cashout/">
-      
-      
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
     
     
       
-        <title>Nilpay API Docs</title>
+        <title>Home - Nilpay API Docs</title>
       
     
     
       <link rel="stylesheet" href="assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -41,6 +50,8 @@
       
     
     
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -51,7 +62,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -72,14 +88,11 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="." title="Nilpay API Docs" class="md-header__button md-logo" aria-label="Nilpay API Docs" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -103,8 +116,8 @@
       </div>
     </div>
     
+      
     
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -155,6 +168,54 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="overview.md" class="md-tabs__link">
+          
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -168,13 +229,16 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="." title="Nilpay API Docs" class="md-nav__button md-logo" aria-label="Nilpay API Docs" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="assets/images/logo.png" alt="logo">
 
     </a>
     Nilpay API Docs
@@ -599,234 +663,104 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="cashout/" class="md-nav__link">
-        
   
-  <span class="md-ellipsis">
-    Cashout
-  </span>
-  
-
-      </a>
-    </li>
-  
-
+    
+    
     
       
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="errors/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    Errors
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="get_user/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    Get user
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
       
       
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="keys_mgmt/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    Keys mgmt
-  </span>
-  
-
-      </a>
-    </li>
-  
-
+      
     
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="responses/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    Responses
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="security/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    Security
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="status/" class="md-nav__link">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
-  
-  <span class="md-ellipsis">
-    Status
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="topup/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Topup
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="versioning/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Versioning
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="vpn/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Vpn
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="webhooks/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Webhooks
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="overview.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+      
+        
 
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
@@ -1199,9 +1133,25 @@
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
                   </div>
                 </div>
               </div>
+            
             
           
           
@@ -1246,46 +1196,46 @@
 <li><strong>Description:</strong> Initiates a top-up transaction for a Nil user.</li>
 <li><strong>Request Body:</strong></li>
 </ul>
-<pre><code class="language-json">{
-    &quot;user_id&quot;: &quot;string&quot;,
-    &quot;amount&quot;: &quot;number&quot;,
-    &quot;service_provider&quot;: &quot;string&quot;,
-    &quot;uuid&quot;: &quot;string&quot;,
-    &quot;signed_uuid&quot;: &quot;string&quot;,
-    &quot;timestamp&quot;: &quot;string&quot;,
-    &quot;currency&quot;: &quot;string&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;number&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;service_provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li><strong>Response:</strong></li>
 </ul>
-<pre><code class="language-json">{
-    &quot;status&quot;: &quot;success&quot;,
-    &quot;code&quot;: &quot;topup_initiated&quot;,
-    &quot;message&quot;: &quot;Transaction initiated successfully.&quot;,
-    &quot;data&quot;: {
-        &quot;transaction_id&quot;: &quot;txn_001&quot;,
-        &quot;status&quot;: &quot;pending&quot;,
-        &quot;amount&quot;: 100.00,
-        &quot;currency&quot;: &quot;USD&quot;,
-        &quot;uuid&quot;: &quot;uuid_001&quot;,
-        &quot;signed_uuid&quot;: &quot;signed_uuid_001&quot;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;topup_initiated&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Transaction initiated successfully.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;txn_001&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pending&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">100.00</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_001&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signed_uuid_001&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li><strong>Error Response Example:</strong></li>
 </ul>
-<pre><code class="language-json">{
-    &quot;status&quot;: &quot;error&quot;,
-    &quot;code&quot;: &quot;insufficient_balance&quot;,
-    &quot;message&quot;: &quot;Insufficient balance to complete the transaction.&quot;,
-    &quot;details&quot;: &quot;The user does not have enough balance in their account.&quot;,
-    &quot;timestamp&quot;: &quot;2024-05-24T12:05:00Z&quot;,
-    &quot;uuid&quot;: &quot;uuid_001&quot;,
-    &quot;signed_uuid&quot;: &quot;signed_uuid_001&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;insufficient_balance&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Insufficient balance to complete the transaction.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The user does not have enough balance in their account.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-05-24T12:05:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signed_uuid_001&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="cash-out-process-for-oss-users"><strong>Cash Out Process for OSS Users</strong></h2>
 <h3 id="endpoints_1"><strong>Endpoints</strong></h3>
 <h3 id="initiate-cash-out"><strong>Initiate Cash Out</strong></h3>
@@ -1295,49 +1245,49 @@
 <li><strong>Description:</strong> Initiates a cash-out transaction for an OSS user.</li>
 <li><strong>Request Body:</strong></li>
 </ul>
-<pre><code class="language-json">{
-    &quot;uuid&quot;: &quot;string&quot;,
-    &quot;signed_uuid&quot;: &quot;string&quot;,
-    &quot;timestamp&quot;: &quot;string&quot;,
-    &quot;from_account&quot;: &quot;string&quot;,
-    &quot;to_account&quot;: &quot;string&quot;,
-    &quot;amount&quot;: &quot;number&quot;,
-    &quot;currency&quot;: &quot;string&quot;,
-    &quot;notes&quot;: &quot;string&quot;,
-    &quot;service_provider&quot;: &quot;string&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;from_account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;to_account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;number&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;notes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;service_provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li><strong>Response:</strong></li>
 </ul>
-<pre><code class="language-json">{
-    &quot;status&quot;: &quot;success&quot;,
-    &quot;code&quot;: &quot;cashout_initiated&quot;,
-    &quot;message&quot;: &quot;Cash out request processed successfully.&quot;,
-    &quot;data&quot;: {
-        &quot;transaction_id&quot;: &quot;txn_002&quot;,
-        &quot;status&quot;: &quot;pending&quot;,
-        &quot;amount&quot;: 200.00,
-        &quot;currency&quot;: &quot;USD&quot;,
-        &quot;timestamp&quot;: &quot;2024-05-24T12:10:00Z&quot;,
-        &quot;uuid&quot;: &quot;uuid_001&quot;,
-        &quot;signed_uuid&quot;: &quot;signed_uuid_001&quot;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cashout_initiated&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cash out request processed successfully.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;txn_002&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pending&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">200.00</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-05-24T12:10:00Z&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_001&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signed_uuid_001&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li><strong>Error Response Example:</strong></li>
 </ul>
-<pre><code class="language-json">{
-    &quot;status&quot;: &quot;error&quot;,
-    &quot;code&quot;: &quot;permission_denied&quot;,
-    &quot;message&quot;: &quot;User does not have permission to perform this operation.&quot;,
-    &quot;details&quot;: &quot;The authenticated user is not authorized to perform this cash-out operation.&quot;,
-    &quot;timestamp&quot;: &quot;2024-05-24T12:10:00Z&quot;,
-    &quot;uuid&quot;: &quot;uuid_001&quot;,
-    &quot;signed_uuid&quot;: &quot;signed_uuid_001&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;permission_denied&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User does not have permission to perform this operation.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The authenticated user is not authorized to perform this cash-out operation.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-05-24T12:10:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signed_uuid_001&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="check-transaction-status"><strong>Check Transaction Status</strong></h3>
 <ul>
 <li><strong>URL:</strong> <code>/api/v1/transaction/status</code></li>
@@ -1345,32 +1295,32 @@
 <li><strong>Description:</strong> Checks the status of a transaction.</li>
 <li><strong>Request Parameters:</strong></li>
 </ul>
-<pre><code class="language-json">{
-    &quot;uuid&quot;: &quot;string&quot;,
-    &quot;signed_uuid&quot;: &quot;string&quot;,
-    &quot;timestamp&quot;: &quot;string&quot;,
-    &quot;service_provider&quot;: &quot;string&quot;,
-    &quot;original_uuid&quot;: &quot;string&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;service_provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;original_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li><strong>Response:</strong></li>
 </ul>
-<pre><code class="language-json">{
-    &quot;status&quot;: &quot;success&quot;,
-    &quot;code&quot;: &quot;transaction_status_retrieved&quot;,
-    &quot;message&quot;: &quot;Transaction status retrieved successfully.&quot;,
-    &quot;data&quot;: {
-        &quot;original_uuid&quot;: &quot;txn_001&quot;,
-        &quot;status&quot;: &quot;completed&quot;,
-        &quot;type&quot;: &quot;top-up&quot;,
-        &quot;details&quot;: &quot;Transaction processed successfully.&quot;,
-        &quot;last_checked&quot;: &quot;2024-05-24T12:05:00Z&quot;,
-        &quot;uuid&quot;: &quot;uuid_001&quot;,
-        &quot;signed_uuid&quot;: &quot;signed_uuid_001&quot;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;transaction_status_retrieved&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Transaction status retrieved successfully.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;original_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;txn_001&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;completed&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;top-up&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Transaction processed successfully.&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;last_checked&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-05-24T12:05:00Z&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_001&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signed_uuid_001&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="user-info"><strong>User Info</strong></h3>
 <ul>
 <li><strong>URL:</strong> <code>/api/v1/user</code></li>
@@ -1378,41 +1328,41 @@
 <li><strong>Description:</strong> Inquires about a nil user public profile</li>
 <li><strong>Request Body:</strong></li>
 </ul>
-<pre><code class="language-json">{
-    &quot;user_id&quot;: &quot;string&quot;,
-    &quot;service_provider&quot;: &quot;string&quot;,
-    &quot;uuid&quot;: &quot;string&quot;,
-    &quot;signed_uuid&quot;: &quot;string&quot;,
-    &quot;timestamp&quot;: &quot;string&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;service_provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li><strong>Response:</strong></li>
 </ul>
-<pre><code class="language-json">{
-    &quot;status&quot;: &quot;success&quot;,
-    &quot;code&quot;: &quot;user_info_retrieved&quot;,
-    &quot;message&quot;: &quot;User info retrieved successfully.&quot;,
-    &quot;data&quot;: {
-        &quot;user_id&quot;: &quot;user_1&quot;,
-        &quot;fullname&quot;: &quot;Mohamed Ahmed&quot;,
-        &quot;status&quot;: &quot;active&quot;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user_info_retrieved&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User info retrieved successfully.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user_1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;fullname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mohamed Ahmed&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;active&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li><strong>Error Response Example:</strong></li>
 </ul>
-<pre><code class="language-json">{
-    &quot;status&quot;: &quot;error&quot;,
-    &quot;code&quot;: &quot;invalid_user_id&quot;,
-    &quot;message&quot;: &quot;User doesn't exist.&quot;,
-    &quot;details&quot;: &quot;The user ID provided is invalid.&quot;,
-    &quot;timestamp&quot;: &quot;2024-05-24T12:05:00Z&quot;,
-    &quot;uuid&quot;: &quot;uuid_001&quot;,
-    &quot;signed_uuid&quot;: &quot;signed_uuid_001&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;invalid_user_id&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User doesn&#39;t exist.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The user ID provided is invalid.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-05-24T12:05:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signed_uuid_001&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="web-hooks"><strong>Web Hooks</strong></h2>
 <h3 id="register-web-hook"><strong>Register Web Hook</strong></h3>
 <p>To receive updates about transaction status changes, you need to register a web hook URL with us.</p>
@@ -1425,26 +1375,26 @@
 </li>
 </ol>
 <p><strong>Request Example:</strong></p>
-<pre><code class="language-json">{
-    &quot;endpoint_url&quot;: &quot;https://example.com/webhook&quot;,
-    &quot;event_type&quot;: &quot;transaction_completed&quot;,
-    &quot;service_provider&quot;: &quot;string&quot;,
-    &quot;uuid&quot;: &quot;string&quot;,
-    &quot;signed_uuid&quot;: &quot;string&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;endpoint_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/webhook&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;event_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;transaction_completed&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;service_provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Response Example:</strong></p>
-<pre><code class="language-json">{
-    &quot;status&quot;: &quot;success&quot;,
-    &quot;code&quot;: &quot;webhook_registered&quot;,
-    &quot;message&quot;: &quot;Web hook registered successfully.&quot;,
-    &quot;data&quot;: {
-        &quot;uuid&quot;: &quot;uuid_001&quot;,
-        &quot;signed_uuid&quot;: &quot;signed_uuid_001&quot;,
-        &quot;service_provider&quot;: &quot;249_111&quot;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;webhook_registered&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Web hook registered successfully.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_001&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signed_uuid_001&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;service_provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;249_111&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <ol>
 <li><strong>On Transaction Completion:</strong><ul>
 <li>When a transaction is completed, we will send a POST request to your registered URL with the following fields:</li>
@@ -1452,26 +1402,26 @@
 </li>
 </ol>
 <p><strong>Request Body Example:</strong></p>
-<pre><code class="language-json">{
-    &quot;transaction_id&quot;: &quot;string&quot;,
-    &quot;status&quot;: &quot;string&quot;,
-    &quot;message&quot;: &quot;string&quot;,
-    &quot;updated_at&quot;: &quot;string&quot;,
-    &quot;uuid&quot;: &quot;string&quot;,
-    &quot;signed_uuid&quot;: &quot;string&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><strong>Response Example:</strong></p>
-<pre><code class="language-json">{
-    &quot;status&quot;: &quot;success&quot;,
-    &quot;code&quot;: &quot;webhook_received&quot;,
-    &quot;message&quot;: &quot;Webhook received successfully.&quot;,
-    &quot;data&quot;: {
-        &quot;uuid&quot;: &quot;uuid_001&quot;,
-        &quot;signed_uuid&quot;: &quot;signed_uuid_001&quot;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;webhook_received&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Webhook received successfully.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_001&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signed_uuid_001&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="keys-management-internal"><strong>Keys Management [INTERNAL]</strong></h2>
 <h3 id="generate-keys"><strong>Generate Keys</strong></h3>
 <ul>
@@ -1480,31 +1430,31 @@
 <li><strong>Description:</strong> Generates a new pair of public and private keys.</li>
 <li><strong>Response:</strong></li>
 </ul>
-<pre><code class="language-json">{
-    &quot;status&quot;: &quot;success&quot;,
-    &quot;code&quot;: &quot;keys_generated&quot;,
-    &quot;message&quot;: &quot;Keys generated successfully.&quot;,
-    &quot;data&quot;: {
-        &quot;public_key&quot;: &quot;MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7...&quot;,
-        &quot;private_key&quot;: &quot;MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAo...&quot;,
-        &quot;uuid&quot;: &quot;uuid_001&quot;,
-        &quot;signed_uuid&quot;: &quot;signed_uuid_001&quot;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;keys_generated&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Keys generated successfully.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;public_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7...&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;private_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAo...&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_001&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signed_uuid_001&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li><strong>Error Response Example:</strong></li>
 </ul>
-<pre><code class="language-json">{
-    &quot;status&quot;: &quot;error&quot;,
-    &quot;code&quot;: &quot;key_generation_failed&quot;,
-    &quot;message&quot;: &quot;Unable to generate keys due to server error.&quot;,
-    &quot;details&quot;: &quot;An internal server error occurred while attempting to generate keys.&quot;,
-    &quot;timestamp&quot;: &quot;2024-05-24T12:10:00Z&quot;,
-    &quot;uuid&quot;: &quot;uuid_001&quot;,
-    &quot;signed_uuid&quot;: &quot;signed_uuid_001&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;key_generation_failed&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unable to generate keys due to server error.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;An internal server error occurred while attempting to generate keys.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-05-24T12:10:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signed_uuid_001&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="rotate-keys"><strong>Rotate Keys</strong></h3>
 <ul>
 <li><strong>URL:</strong> <code>/api/v1/keys/rotate</code></li>
@@ -1512,44 +1462,43 @@
 <li><strong>Description:</strong> Rotates the existing keys and generates a new pair of keys.</li>
 <li><strong>Response:</strong></li>
 </ul>
-<pre><code class="language-json">{
-    &quot;status&quot;: &quot;success&quot;,
-    &quot;code&quot;: &quot;keys_rotated&quot;,
-    &quot;message&quot;: &quot;Keys rotated successfully.&quot;,
-    &quot;data&quot;: {
-        &quot;new_public_key&quot;: &quot;MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7...&quot;,
-        &quot;new_private_key&quot;: &quot;MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAo...&quot;,
-        &quot;uuid&quot;: &quot;uuid_001&quot;,
-        &quot;signed_uuid&quot;: &quot;signed_uuid_001&quot;
-    }
-}
-    ```
-
-- **Error Response Example:**
-
-```json
-{
-    &quot;status&quot;: &quot;error&quot;,
-    &quot;code&quot;: &quot;key_rotation_failed&quot;,
-    &quot;message&quot;: &quot;Unable to rotate keys due to server error.&quot;,
-    &quot;details&quot;: &quot;An internal server error occurred while attempting to rotate keys.&quot;,
-    &quot;timestamp&quot;: &quot;2024-05-24T12:10:00Z&quot;,
-    &quot;uuid&quot;: &quot;uuid_001&quot;,
-    &quot;signed_uuid&quot;: &quot;signed_uuid_001&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;keys_rotated&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Keys rotated successfully.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;new_public_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7...&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;new_private_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAo...&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_001&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signed_uuid_001&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><strong>Error Response Example:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;key_rotation_failed&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unable to rotate keys due to server error.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;An internal server error occurred while attempting to rotate keys.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-05-24T12:10:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signed_uuid_001&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="error-handling"><strong>Error Handling</strong></h2>
 <h3 id="standard-error-response"><strong>Standard Error Response:</strong></h3>
-<pre><code class="language-json">{
-    &quot;status&quot;: &quot;error&quot;,
-    &quot;code&quot;: &quot;string&quot;,
-    &quot;message&quot;: &quot;string&quot;,
-    &quot;details&quot;: &quot;string&quot;,
-    &quot;timestamp&quot;: &quot;string&quot;,
-    &quot;uuid&quot;: &quot;string&quot;,
-    &quot;signed_uuid&quot;: &quot;string&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="common-error-codes"><strong>Common Error Codes:</strong></h3>
 <ul>
 <li><strong>insufficient_balance</strong><ul>
@@ -1670,16 +1619,16 @@
 </li>
 <li><strong>Response for Exceeded Rate Limit:</strong></li>
 </ul>
-<pre><code class="language-json">{
-    &quot;status&quot;: &quot;error&quot;,
-    &quot;code&quot;: &quot;rate_limit_exceeded&quot;,
-    &quot;message&quot;: &quot;Too Many Requests&quot;,
-    &quot;details&quot;: &quot;You have exceeded the rate limit. Please try again later.&quot;,
-    &quot;retry_after&quot;: &quot;60&quot;,
-    &quot;uuid&quot;: &quot;uuid_001&quot;,
-    &quot;signed_uuid&quot;: &quot;signed_uuid_001&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rate_limit_exceeded&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Too Many Requests&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;You have exceeded the rate limit. Please try again later.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;retry_after&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;60&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signed_uuid_001&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="versioning"><strong>Versioning</strong></h2>
 <ul>
 <li><strong>Current Version:</strong> v1</li>
@@ -1735,19 +1684,19 @@
 </ol>
 <h3 id="tailscale-acl-configuration"><strong>Tailscale ACL Configuration</strong></h3>
 <p>To limit service provider interaction to a subset of endpoints, configure Tailscale ACLs:</p>
-<pre><code class="language-json">{
-  &quot;tagOwners&quot;: {
-    &quot;tag:service-providers&quot;: [&quot;&lt;identity-of-node-allowed-to-tag&gt;&quot;]
-  },
-  &quot;acl&quot;: [
-    {
-      &quot;action&quot;: &quot;accept&quot;,
-      &quot;src&quot;: [&quot;tag:service-providers&quot;],
-      &quot;dst&quot;: [&quot;10.0.0.0/24:*&quot;]
-    }
-  ]
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;tagOwners&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;tag:service-providers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;&lt;identity-of-node-allowed-to-tag&gt;&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;acl&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;accept&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag:service-providers&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;dst&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;10.0.0.0/24:*&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="steps-to-apply-acl"><strong>Steps to Apply ACL</strong></h3>
 <ol>
 <li><strong>Access Tailscale Admin Console:</strong><ul>
@@ -1776,15 +1725,15 @@
 </li>
 <li><strong>Example:</strong></li>
 </ul>
-<pre><code class="language-json">{
-    &quot;transaction_id&quot;: &quot;txn_001&quot;,
-    &quot;status&quot;: &quot;pending&quot;,
-    &quot;amount&quot;: 100.00,
-    &quot;currency&quot;: &quot;USD&quot;,
-    &quot;uuid&quot;: &quot;uuid_001&quot;,
-    &quot;signed_uuid&quot;: &quot;signed_uuid_001&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;txn_001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pending&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">100.00</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signed_uuid_001&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="cash-out-response-data"><strong>Cash-out Response Data</strong></h3>
 <ul>
 <li><strong>Fields:</strong><ul>
@@ -1799,16 +1748,16 @@
 </li>
 <li><strong>Example:</strong></li>
 </ul>
-<pre><code class="language-json">{
-    &quot;transaction_id&quot;: &quot;txn_002&quot;,
-    &quot;status&quot;: &quot;pending&quot;,
-    &quot;amount&quot;: 200.00,
-    &quot;currency&quot;: &quot;USD&quot;,
-    &quot;timestamp&quot;: &quot;2024-05-24T12:10:00Z&quot;,
-    &quot;uuid&quot;: &quot;uuid_001&quot;,
-    &quot;signed_uuid&quot;: &quot;signed_uuid_001&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;txn_002&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pending&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">200.00</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-05-24T12:10:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signed_uuid_001&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="general-api-response-data"><strong>General API Response Data</strong></h3>
 <ul>
 <li><strong>Description:</strong> This field will be used to return specific data relevant to the context of the API call, ensuring that responses are informative and useful for the API consumers.</li>
@@ -1823,329 +1772,329 @@
 <li>Create sequence diagrams</li>
 </ul>
 <p><strong>OpenAPI Schema</strong></p>
-<pre><code class="language-yaml">openapi: 3.0.0
-info:
-  title: Non-blocking Transaction API
-  version: 1.0.0
-paths:
-  /api/v1/topup/initiate:
-    post:
-      summary: Initiate Top-up
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                user_id:
-                  type: string
-                amount:
-                  type: number
-                service_provider:
-                  type: string
-                uuid:
-                  type: string
-                signed_uuid:
-                  type: string
-                timestamp:
-                  type: string
-                currency:
-                  type: string
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                  code:
-                    type: string
-                  message:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      transaction_id:
-                        type: string
-                      status:
-                        type: string
-                      amount:
-                        type: number
-                      currency:
-                        type: string
-                      uuid:
-                        type: string
-                      signed_uuid:
-                        type: string
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /api/v1/cashout/initiate:
-    post:
-      summary: Initiate Cash Out
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                uuid:
-                  type: string
-                signed_uuid:
-                  type: string
-                timestamp:
-                  type: string
-                from_account:
-                  type: string
-                to_account:
-                  type: string
-                amount:
-                  type: number
-                currency:
-                  type: string
-                notes:
-                  type: string
-                service_provider:
-                  type: string
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                  code:
-                    type: string
-                  message:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      transaction_id:
-                        type: string
-                      status:
-                        type: string
-                      amount:
-                        type: number
-                      currency:
-                        type: string
-                      timestamp:
-                        type: string
-                      uuid:
-                        type: string
-                      signed_uuid:
-                        type: string
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /api/v1/transaction/status:
-    post:
-      summary: Check Transaction Status
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                uuid:
-                  type: string
-                signed_uuid:
-                  type: string
-                timestamp:
-                  type: string
-                service_provider:
-                  type: string
-                original_uuid:
-                  type: string
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                  code:
-                    type: string
-                  message:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      original_uuid:
-                        type: string
-                      status:
-                        type: string
-                      type:
-                        type: string
-                      details:
-                        type: string
-                      last_checked:
-                        type: string
-                      uuid:
-                        type: string
-                      signed_uuid:
-                        type: string
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /api/v1/user:
-    post:
-      summary: User Info
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                user_id:
-                  type: string
-                service_provider:
-                  type: string
-                uuid:
-                  type: string
-                signed_uuid:
-                  type: string
-                timestamp:
-                  type: string
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                  code:
-                    type: string
-                  message:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      user_id:
-                        type: string
-                      fullname:
-                        type: string
-                      status:
-                        type: string
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /api/v1/keys/generate:
-    post:
-      summary: Generate Keys
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                  code:
-                    type: string
-                  message:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      public_key:
-                        type: string
-                      private_key:
-                        type: string
-                      uuid:
-                        type: string
-                      signed_uuid:
-                        type: string
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /api/v1/keys/rotate:
-    post:
-      summary: Rotate Keys
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                  code:
-                    type: string
-                  message:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      new_public_key:
-                        type: string
-                      new_private_key:
-                        type: string
-                      uuid:
-                        type: string
-                      signed_uuid:
-                        type: string
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-components:
-  schemas:
-    Error:
-      type: object
-      properties:
-        status:
-          type: string
-        code:
-          type: string
-        message:
-          type: string
-        details:
-          type: string
-        timestamp:
-          type: string
-        uuid:
-          type: string
-        signed_uuid:
-          type: string
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">openapi</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.0.0</span>
+<span class="nt">info</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Non-blocking Transaction API</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0.0</span>
+<span class="nt">paths</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">/api/v1/topup/initiate</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">post</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Initiate Top-up</span>
+<span class="w">      </span><span class="nt">requestBody</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">        </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">              </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">user_id</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">amount</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">number</span>
+<span class="w">                </span><span class="nt">service_provider</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">uuid</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">signed_uuid</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">timestamp</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">currency</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">      </span><span class="nt">responses</span><span class="p">:</span>
+<span class="w">        </span><span class="s">&#39;200&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Success</span>
+<span class="w">          </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">                </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">status</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">code</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">message</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">data</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">                    </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">                      </span><span class="nt">transaction_id</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">status</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">amount</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">number</span>
+<span class="w">                      </span><span class="nt">currency</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">uuid</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">signed_uuid</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="s">&#39;400&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+<span class="w">          </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">$ref</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#/components/schemas/Error&#39;</span>
+<span class="w">  </span><span class="nt">/api/v1/cashout/initiate</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">post</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Initiate Cash Out</span>
+<span class="w">      </span><span class="nt">requestBody</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">        </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">              </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">uuid</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">signed_uuid</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">timestamp</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">from_account</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">to_account</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">amount</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">number</span>
+<span class="w">                </span><span class="nt">currency</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">notes</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">service_provider</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">      </span><span class="nt">responses</span><span class="p">:</span>
+<span class="w">        </span><span class="s">&#39;200&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Success</span>
+<span class="w">          </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">                </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">status</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">code</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">message</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">data</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">                    </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">                      </span><span class="nt">transaction_id</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">status</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">amount</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">number</span>
+<span class="w">                      </span><span class="nt">currency</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">timestamp</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">uuid</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">signed_uuid</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="s">&#39;400&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+<span class="w">          </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">$ref</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#/components/schemas/Error&#39;</span>
+<span class="w">  </span><span class="nt">/api/v1/transaction/status</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">post</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check Transaction Status</span>
+<span class="w">      </span><span class="nt">requestBody</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">        </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">              </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">uuid</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">signed_uuid</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">timestamp</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">service_provider</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">original_uuid</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">      </span><span class="nt">responses</span><span class="p">:</span>
+<span class="w">        </span><span class="s">&#39;200&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Success</span>
+<span class="w">          </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">                </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">status</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">code</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">message</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">data</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">                    </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">                      </span><span class="nt">original_uuid</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">status</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">type</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">details</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">last_checked</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">uuid</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">signed_uuid</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="s">&#39;400&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+<span class="w">          </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">$ref</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#/components/schemas/Error&#39;</span>
+<span class="w">  </span><span class="nt">/api/v1/user</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">post</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">User Info</span>
+<span class="w">      </span><span class="nt">requestBody</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">        </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">              </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">user_id</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">service_provider</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">uuid</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">signed_uuid</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="nt">timestamp</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">      </span><span class="nt">responses</span><span class="p">:</span>
+<span class="w">        </span><span class="s">&#39;200&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Success</span>
+<span class="w">          </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">                </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">status</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">code</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">message</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">data</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">                    </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">                      </span><span class="nt">user_id</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">fullname</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">status</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="s">&#39;400&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+<span class="w">          </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">$ref</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#/components/schemas/Error&#39;</span>
+<span class="w">  </span><span class="nt">/api/v1/keys/generate</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">post</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Generate Keys</span>
+<span class="w">      </span><span class="nt">responses</span><span class="p">:</span>
+<span class="w">        </span><span class="s">&#39;200&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Success</span>
+<span class="w">          </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">                </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">status</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">code</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">message</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">data</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">                    </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">                      </span><span class="nt">public_key</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">private_key</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">uuid</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">signed_uuid</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="s">&#39;400&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+<span class="w">          </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">$ref</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#/components/schemas/Error&#39;</span>
+<span class="w">  </span><span class="nt">/api/v1/keys/rotate</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">post</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rotate Keys</span>
+<span class="w">      </span><span class="nt">responses</span><span class="p">:</span>
+<span class="w">        </span><span class="s">&#39;200&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Success</span>
+<span class="w">          </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">                </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">status</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">code</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">message</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                  </span><span class="nt">data</span><span class="p">:</span>
+<span class="w">                    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">                    </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">                      </span><span class="nt">new_public_key</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">new_private_key</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">uuid</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                      </span><span class="nt">signed_uuid</span><span class="p">:</span>
+<span class="w">                        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="s">&#39;400&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Error</span>
+<span class="w">          </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">$ref</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#/components/schemas/Error&#39;</span>
+<span class="nt">components</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">schemas</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Error</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">      </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">status</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">code</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">message</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">details</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">timestamp</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">uuid</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="nt">signed_uuid</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+</code></pre></div>
 
 
 
@@ -2163,6 +2112,8 @@ components:
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -2182,6 +2133,43 @@ components:
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/your-username/your-repo" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/your-username" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -2192,7 +2180,7 @@ components:
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.sections", "navigation.expand", "navigation.tabs", "toc.integrate", "search.highlight", "content.code.annotate", "content.tabs.link", "content.tabs.local"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="assets/javascripts/bundle.081f42fc.min.js"></script>
