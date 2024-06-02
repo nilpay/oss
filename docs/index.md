@@ -474,7 +474,7 @@ Certainly! Here is a more detailed section focusing on the status and code value
 | internal_error             | A generic error for all server-specific errors.                                                | Investigate the server error logs and contact support if needed. |
 | aws_error                  | AWS-related error during the transaction.                                                      | Investigate AWS service logs and retry the transaction.         |
 | encryption_error           | Error in data encryption or decryption process.                                                | Verify encryption settings and retry the transaction.           |
-| users_not_found            | One or more users involved in the transaction do not exist.                                    | Ensure all involved user accounts exist and retry the transaction. |
+| user_not_found            | One or more users involved in the transaction do not exist.                                    | Ensure all involved user accounts exist and retry the transaction. |
 | missing_fields             | Required fields are missing in the request.                                                    | Provide the missing fields and retry the transaction.           |
 
 ### Example API Response
