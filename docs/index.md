@@ -1,4 +1,4 @@
-**API Documentation**
+## **API Documentation**
 
 ## **Overview**
 
@@ -417,7 +417,103 @@ To receive updates about transaction status changes, you need to register a web 
 | key_rotation_failed | An internal server error occurred while attempting to rotate keys. | Try again later. If the problem persists, contact support. |
 | bad_request | Malformed request. Potentially missing some fields. | Refer to API docs. |
 | internal_error | A generic error for all server-specific errors. | This indicates a service error at Nil. |
-| authnetication_error | An error in nil authentication, are you following our encryption tutorial? | Just checl you are signing the correct UUID |
+| authentication_error | An error in nil authentication. Are you following our encryption tutorial? | Ensure you are signing the correct UUID |
+
+
+Certainly! Here is a more detailed section focusing on the status and code values for the API responses, following best practices and ensuring clarity:
+
+### Status and Code Usage
+
+- **`status`**: Indicates the overall state of the transaction.
+  - Possible values: `pending`, `failed`, `success`
+- **`code`**: Provides more specific information about the outcome of the transaction.
+  - Possible values include specific success or error codes.
+
+### Detailed Tables for Status and Code
+
+#### Status
+
+| Status    | Description                                    |
+|-----------|------------------------------------------------|
+| pending   | The transaction is in progress and not yet complete. |
+| failed    | The transaction has failed due to an error.    |
+| success   | The transaction has completed successfully.    |
+
+#### Code
+
+##### Success Codes
+
+| Code                     | Description                                             |
+|--------------------------|---------------------------------------------------------|
+| topup_initiated          | The top-up transaction has been initiated successfully. |
+| cashout_initiated        | The cash-out transaction has been initiated successfully.|
+| transaction_completed    | The transaction has been completed successfully.        |
+| user_info_retrieved      | User information has been retrieved successfully.       |
+| keys_generated           | Keys have been generated successfully.                 |
+| keys_rotated             | Keys have been rotated successfully.                   |
+| webhook_registered       | The web hook has been registered successfully.          |
+
+##### Error Codes
+
+| Code                       | Description                                                                                   | Resolution                                                      |
+|----------------------------|-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------|
+| insufficient_balance       | Insufficient balance to complete the transaction.                                              | Ensure the user has sufficient funds before retrying.           |
+| transaction_not_found      | The specified transaction ID does not exist.                                                   | Verify the transaction ID and try again.                        |
+| invalid_uuid               | The provided UUID does not conform to the required format.                                     | Check the UUID format and correct it before retrying.           |
+| permission_denied          | The authenticated user is not authorized to perform this operation.                            | Ensure the user has the necessary permissions before retrying.  |
+| invalid_transaction_id     | The provided transaction ID is invalid.                                                        | Check the transaction ID and correct it before retrying.        |
+| key_generation_failed      | Unable to generate keys due to server error.                                                   | Try again later. If the problem persists, contact support.      |
+| key_rotation_failed        | Unable to rotate keys due to server error.                                                     | Try again later. If the problem persists, contact support.      |
+| user_not_found             | The specified user does not exist.                                                             | Ensure the user ID is correct and exists in the system.         |
+| authentication_error       | An authentication error occurred.                                                             | Ensure proper authentication credentials are provided.          |
+| debit_failed               | Failed to debit from the balance.                                                             | Investigate the error and retry the transaction.                |
+| credit_failed              | Failed to credit the balance.                                                                 | Investigate the error and retry the transaction.                |
+| rate_limit_exceeded        | The user has exceeded the rate limit.                                                         | Wait for the rate limit to reset before making new requests.    |
+| bad_request                | Malformed request. Potentially missing some fields.                                           | Check the request format and ensure all required fields are provided. |
+| internal_error             | A generic error for all server-specific errors.                                                | Investigate the server error logs and contact support if needed. |
+| aws_error                  | AWS-related error during the transaction.                                                      | Investigate AWS service logs and retry the transaction.         |
+| encryption_error           | Error in data encryption or decryption process.                                                | Verify encryption settings and retry the transaction.           |
+| users_not_found            | One or more users involved in the transaction do not exist.                                    | Ensure all involved user accounts exist and retry the transaction. |
+| missing_fields             | Required fields are missing in the request.                                                    | Provide the missing fields and retry the transaction.           |
+
+### Example API Response
+
+**Success Response**
+
+```json
+{
+    "status": "success",
+    "code": "topup_initiated",
+    "message": "Transaction initiated successfully.",
+    "data": {
+        "transaction_id": "txn_001",
+        "status": "pending",
+        "amount": 100.00,
+        "currency": "USD",
+        "uuid": "uuid_001",
+        "signed_uuid": "signed_uuid_001"
+    }
+}
+```
+
+**Error Response**
+
+```json
+{
+    "status": "failed",
+    "code": "insufficient_balance",
+    "message": "Insufficient balance to complete the transaction.",
+    "details": "The user does not have enough balance in their account.",
+    "timestamp": "2024-05-24T12:05:00Z",
+    "data": {
+        "uuid": "uuid_001",
+        "signed_uuid": "signed_uuid_001",
+        "status": "failed"
+    }
+}
+```
+
+
 
 ## **Security Considerations**
 
@@ -524,14 +620,14 @@ To limit service provider interaction to a subset of endpoints, configure Tailsc
 In our API responses, the `data` field will contain different information depending on the context of the API call. Here is a breakdown of the possible structures:
 
 !!! note
-    transaction_id is a system generated id (ksuid) for all of the transactions, whilst UUID is client generated
-    Both can be used efficiently to retrieve a transactions info
+    transaction_id is a system-generated ID (ksuid) for all transactions, while UUID is client-generated.
+    Both can be used efficiently to retrieve a transaction's info.
 
 
 ### **Top-up Response Data**
 
 - **Fields:**
-    - `transaction_id`: Unique identifier for the transaction, generated by nil system.
+    - `transaction_id`: Unique identifier for the transaction, generated by the Nil system.
     - `status`: Status of the transaction (e.g., pending, completed).
     - `amount`: Amount involved in the transaction.
     - `currency`: Currency of the transaction.
@@ -541,7 +637,7 @@ In our API responses, the `data` field will contain different information depend
     
 ```json
 {
-    "transaction_id": "txn_001", // transaction_id is a system generated ksuid
+    "transaction_id": "txn_001",
     "status": "pending",
     "amount": 100.00,
     "currency": "USD",
