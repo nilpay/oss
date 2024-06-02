@@ -1681,6 +1681,11 @@
 </ol>
 <h2 id="data-field-rationale"><strong>Data Field Rationale</strong></h2>
 <p>In our API responses, the <code>data</code> field will contain different information depending on the context of the API call. Here is a breakdown of the possible structures:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>transaction_id is a system generated id (ksuid) for all of the transactions, whilst UUID is client generated
+Both can be used efficiently to retrieve a transactions info</p>
+</div>
 <h3 id="top-up-response-data"><strong>Top-up Response Data</strong></h3>
 <ul>
 <li><strong>Fields:</strong><ul>

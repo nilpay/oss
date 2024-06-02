@@ -523,6 +523,11 @@ To limit service provider interaction to a subset of endpoints, configure Tailsc
 
 In our API responses, the `data` field will contain different information depending on the context of the API call. Here is a breakdown of the possible structures:
 
+!!! note
+    transaction_id is a system generated id (ksuid) for all of the transactions, whilst UUID is client generated
+    Both can be used efficiently to retrieve a transactions info
+
+
 ### **Top-up Response Data**
 
 - **Fields:**
