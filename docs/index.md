@@ -573,15 +573,6 @@ In our API responses, the `data` field will contain different information depend
 - **Description:** This field will be used to return specific data relevant to the context of the API call, ensuring that responses are informative and useful for the API consumers.
 - **Note:** Always refer to the specific API endpoint documentation to understand the exact structure and contents of the `data` field for that endpoint.
 
-## **Feature Implementation Timeline**
-
-[Service Provider Integration](https://www.notion.so/d838393925774bfcbe92adbb41d93091?pvs=21)
-
-## Extra Features
-
-- Check balance (for OSS accounts)
-- Check statement
-- Create sequence diagrams
 
 **OpenAPI Schema**
 
