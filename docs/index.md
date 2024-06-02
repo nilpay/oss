@@ -452,6 +452,7 @@ Certainly! Here is a more detailed section focusing on the status and code value
 | keys_generated           | Keys have been generated successfully.                 |
 | keys_rotated             | Keys have been rotated successfully.                   |
 | webhook_registered       | The web hook has been registered successfully.          |
+| successful_transaction       | Generic successful message.         |
 
 ##### Error Codes
 
