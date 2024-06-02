@@ -417,6 +417,7 @@ To receive updates about transaction status changes, you need to register a web 
 | key_rotation_failed | An internal server error occurred while attempting to rotate keys. | Try again later. If the problem persists, contact support. |
 | bad_request | Malformed request. Potentially missing some fields. | Refer to API docs. |
 | internal_error | A generic error for all server-specific errors. | This indicates a service error at Nil. |
+| authnetication_error | An error in nil authentication, are you following our encryption tutorial? | Just checl you are signing the correct UUID |
 
 ## **Security Considerations**
 
