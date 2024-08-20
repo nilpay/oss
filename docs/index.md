@@ -25,6 +25,9 @@ This API documentation outlines the process for non-blocking transactions, speci
 
 ### **Endpoints**
 
+!!! tip
+    Base url for accessing our endpoint behind tailscale VPN is: https://nil.tailf4a43a.ts.net
+
 ### **Initiate Top-up**
 
 - **URL:** `/api/v1/topup/initiate`
@@ -561,6 +564,119 @@ Certainly! Here is a more detailed section focusing on the status and code value
 
 For secure communication between Nil and service providers, Tailscale VPN is used. If hosting systems on AWS or other cloud providers, Tailscale can be integrated into their environments.
 
+### Tailscale installation for local development and test environment
+
+Here are installation notes for setting up Tailscale on a local development machine (Linux, Windows, or macOS) and signing in using Google identity for accessing servers secured behind a Tailscale network.
+
+---
+
+!!! warning
+    https://nil.tailf4a43a.ts.net is only accessible via our specific tailscale tailnet, you cannot access it via internet and you cannot access it via any other tailscale organization.
+
+# **Tailscale Installation and Setup Guide for Local Development**
+
+## **1. Installation**
+
+### **Linux**
+
+1. **Install Tailscale:**
+   - Open your terminal.
+   - Run the following command based on your distribution:
+
+   **Debian/Ubuntu:**
+   ```bash
+   curl -fsSL https://tailscale.com/install.sh | sh
+   ```
+
+   **Fedora:**
+   ```bash
+   sudo dnf install tailscale
+   ```
+
+   **Arch Linux:**
+   ```bash
+   sudo pacman -S tailscale
+   ```
+
+   **Other distributions:**
+   - Follow the installation instructions provided on [Tailscale’s Linux installation page](https://tailscale.com/kb/1033/install-linux).
+
+2. **Start the Tailscale service:**
+   ```bash
+   sudo tailscale up
+   ```
+
+### **Windows**
+
+1. **Download and Install Tailscale:**
+   - Visit the [Tailscale download page](https://tailscale.com/download).
+   - Download the Windows installer.
+   - Run the installer and follow the on-screen instructions.
+
+2. **Start Tailscale:**
+   - After installation, Tailscale should automatically start. If not, search for "Tailscale" in the Start Menu and open it.
+
+### **macOS**
+
+1. **Download and Install Tailscale:**
+   - Visit the [Tailscale download page](https://tailscale.com/download).
+   - Download the macOS installer.
+   - Open the downloaded `.dmg` file and drag Tailscale to your Applications folder.
+
+2. **Start Tailscale:**
+   - Open Tailscale from your Applications folder.
+
+---
+
+## **2. Sign in via Google Identity**
+
+1. **Initiate the Sign-In Process:**
+   - Once Tailscale is installed and running, a browser window will open for you to log in.
+   - If not automatically opened, you can initiate sign-in by running:
+     ```bash
+     tailscale up
+     ```
+     (on Linux) or by clicking "Log in" in the Tailscale app on Windows/macOS.
+
+2. **Choose Google as your Identity Provider:**
+   - In the browser, select "Log in with Google."
+   - Choose the Google account associated with your organization (you can request this one from Nilpay)
+
+3. **Authorize Tailscale:**
+   - Follow the prompts to authorize Tailscale to access your Google account.
+
+4. **Complete the Login:**
+   - After signing in, Tailscale will complete the setup on your local machine and connect to your Tailscale network.
+
+---
+
+## **3. Accessing Servers Secured by Tailscale**
+
+1. **Connect to Your Tailscale Network:**
+   - After logging in, your machine will be connected to the Tailscale network.
+   - You can view connected devices and your network's IP addresses by running:
+     ```bash
+     tailscale status
+     ```
+     (on Linux) or by checking the Tailscale app on Windows/macOS.
+
+2. **Access Servers:**
+   - Use the Tailscale IP address (e.g., `100.x.x.x`) of the server you need to access (since we are using MagicDNS, you will use https://nil.tailf4a43a.ts.net for all interactions) 
+   - You can connect via SSH, HTTP, or any other protocol your server supports, using the Tailscale IP address as if it were on your local network.
+
+   **Example SSH Command:**
+   ```bash
+   ssh user@100.x.x.x
+   ```
+
+3. **Ensure Connectivity:**
+   - Make sure your server allows connections from your Tailscale network and that your firewall rules are configured appropriately.
+
+---
+
+
+
+
 ### **Tailscale with AWS VPC**
 
 To integrate Tailscale with AWS VPC:
@@ -579,42 +695,6 @@ To integrate Tailscale with AWS VPC:
 
 For other cloud providers like GCP, Azure, or DigitalOcean, the process is similar. Install Tailscale on your virtual machines, authenticate, and configure subnet routing as per the provider's network setup.
 
-### **Accessing Connected Tailscale Nodes**
-
-To manage and access information about connected Tailscale nodes:
-
-1. **Tailscale Admin Console:**
-    - Use the Tailscale admin console to view all connected nodes, their IP addresses, and status.
-2. **Tailscale API:**
-    - Use the Tailscale API to programmatically access information about nodes, including their connection status and details.
-
-### **Tailscale ACL Configuration**
-
-To limit service provider interaction to a subset of endpoints, configure Tailscale ACLs:
-
-```json
-{
-  "tagOwners": {
-    "tag:service-providers": ["<identity-of-node-allowed-to-tag>"]
-  },
-  "acl": [
-    {
-      "action": "accept",
-      "src": ["tag:service-providers"],
-      "dst": ["10.0.0.0/24:*"]
-    }
-  ]
-}
-```
-
-### **Steps to Apply ACL**
-
-1. **Access Tailscale Admin Console:**
-    - Go to the Tailscale admin console.
-    - Navigate to the "Access Controls" section.
-2. **Edit ACLs:**
-    - Add the ACL JSON configuration.
-    - Save and apply the changes.
 
 ## **Data Field Rationale**
 
