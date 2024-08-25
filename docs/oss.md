@@ -324,11 +324,11 @@ For any issues or questions regarding the webhook integration, please contact ou
 
 1. You can check your assigned dashboard by visitiing {baseURL}/admin (tailscale VPNed)
 
-![The dashboard](./dashboard.png)
+![The dashboard](/assets/dashboard.png)
 
 2. You are also able to check your assigned `service_provider` there, and upload your public key.
 
-![Public key and settings](./pubkey.png)
+![Public key and settings](/assets/pubkey.png)
 
 3. Finally, you can also view all of the transactions that have been processed by your service provider.
-![Transactions](./transactions.png)
+![Transactions](/assets/transactions.png)
