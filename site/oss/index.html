@@ -367,7 +367,7 @@
 
 
 <h1 id="oss-specific-documentation">OSS specific documentation</h1>
-<h1 id="cash-out-api-specification">Cash Out API Specification</h1>
+<h1 id="cash-out-api-specification-updated">Cash Out API Specification (Updated)</h1>
 <h2 id="endpoint">Endpoint</h2>
 <p><code>POST /api/v1/cashout/initiate</code></p>
 <h2 id="request-headers">Request Headers</h2>
@@ -388,7 +388,7 @@
 <h3 id="field-descriptions">Field Descriptions</h3>
 <ul>
 <li><code>uuid</code>: A unique identifier for the request (UUIDv4 format)</li>
-<li><code>signed_uuid</code>: Base64 encoded signature of the UUID</li>
+<li><code>signed_uuid</code>: Base64 encoded signature of the hashed UUID</li>
 <li><code>to_account</code>: The recipient's account number</li>
 <li><code>amount</code>: The amount to be transferred (positive number)</li>
 <li><code>currency</code>: The currency of the transaction (e.g., "SDG")</li>
@@ -431,30 +431,6 @@
 <span class="w">  </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="key-generation-and-signing-process">Key Generation and Signing Process</h2>
-<ol>
-<li>Key Generation:</li>
-<li>Generate an RSA key pair (2048 bits recommended)</li>
-<li>Store the private key securely</li>
-<li>
-<p>Share the public key with the API provider</p>
-</li>
-<li>
-<p>Request Signing:</p>
-</li>
-<li>Generate a UUIDv4 for each request</li>
-<li>Hash the UUID using SHA-256</li>
-<li>Sign the hashed UUID using the private key with PKCS1v15 padding</li>
-<li>
-<p>Base64 encode the resulting signature</p>
-</li>
-<li>
-<p>Signature Verification (Server-side):</p>
-</li>
-<li>Decode the Base64 <code>signed_uuid</code></li>
-<li>Hash the provided <code>uuid</code> using SHA-256</li>
-<li>Verify the signature using the stored public key</li>
-</ol>
 <h2 id="error-codes">Error Codes</h2>
 <ul>
 <li><code>malformed_request</code>: Invalid request format</li>
@@ -468,6 +444,59 @@
 <li><code>currency_not_supported</code>: The specified currency is not supported</li>
 <li><code>transaction_failed</code>: Unable to process the cash out request</li>
 </ul>
+<h2 id="key-generation-and-signing-process">Key Generation and Signing Process</h2>
+<ol>
+<li>Key Generation:</li>
+<li>Generate an RSA key pair (2048 bits recommended)</li>
+<li>Store the private key securely</li>
+<li>
+<p>Share the public key with the API provider</p>
+</li>
+<li>
+<p>Request Signing:</p>
+</li>
+<li>Generate a UUIDv4 for each request</li>
+<li>Hash the UUID using SHA-256</li>
+<li>Sign the hashed UUID using the private key with PKCS1v15 padding and SHA-256 as the hash function</li>
+<li>
+<p>Base64 encode the resulting signature</p>
+</li>
+<li>
+<p>Signature Verification (Server-side):</p>
+</li>
+<li>Decode the Base64 <code>signed_uuid</code></li>
+<li>Hash the provided <code>uuid</code> using SHA-256</li>
+<li>Verify the signature using the stored public key, PKCS1v15 padding, and SHA-256 as the hash function</li>
+</ol>
+<h2 id="example-signing-process-go">Example Signing Process (Go)</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;crypto&quot;</span>
+<span class="w">    </span><span class="s">&quot;crypto/rand&quot;</span>
+<span class="w">    </span><span class="s">&quot;crypto/rsa&quot;</span>
+<span class="w">    </span><span class="s">&quot;crypto/sha256&quot;</span>
+<span class="w">    </span><span class="s">&quot;encoding/base64&quot;</span>
+<span class="w">    </span><span class="s">&quot;github.com/google/uuid&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">signRequest</span><span class="p">(</span><span class="nx">privateKey</span><span class="w"> </span><span class="o">*</span><span class="nx">rsa</span><span class="p">.</span><span class="nx">PrivateKey</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Generate UUID</span>
+<span class="w">    </span><span class="nx">uuidStr</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">uuid</span><span class="p">.</span><span class="nx">New</span><span class="p">().</span><span class="nx">String</span><span class="p">()</span>
+
+<span class="w">    </span><span class="c1">// Hash the UUID</span>
+<span class="w">    </span><span class="nx">hash</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">sha256</span><span class="p">.</span><span class="nx">Sum256</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">uuidStr</span><span class="p">))</span>
+
+<span class="w">    </span><span class="c1">// Sign the hashed UUID</span>
+<span class="w">    </span><span class="nx">signature</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">rsa</span><span class="p">.</span><span class="nx">SignPKCS1v15</span><span class="p">(</span><span class="nx">rand</span><span class="p">.</span><span class="nx">Reader</span><span class="p">,</span><span class="w"> </span><span class="nx">privateKey</span><span class="p">,</span><span class="w"> </span><span class="nx">crypto</span><span class="p">.</span><span class="nx">SHA256</span><span class="p">,</span><span class="w"> </span><span class="nx">hash</span><span class="p">[:])</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Base64 encode the signature</span>
+<span class="w">    </span><span class="nx">signedUUID</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">base64</span><span class="p">.</span><span class="nx">StdEncoding</span><span class="p">.</span><span class="nx">EncodeToString</span><span class="p">(</span><span class="nx">signature</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">uuidStr</span><span class="p">,</span><span class="w"> </span><span class="nx">signedUUID</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="notes">Notes</h2>
 <ul>
 <li>All requests must use HTTPS</li>
@@ -475,6 +504,7 @@
 <li>The service provider must be pre-registered and have a valid public key stored on the server</li>
 <li>The cash out provider must be either "nil" or "bok"</li>
 <li>Currently, only "SDG" is supported as a valid currency</li>
+<li>Always hash the UUID before signing to ensure consistent security practices</li>
 </ul>
 <h1 id="getuserinfo-api">GetUserInfo API</h1>
 <h2 id="endpoint_1">Endpoint</h2>

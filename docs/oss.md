@@ -1,6 +1,6 @@
 # OSS specific documentation
 
-# Cash Out API Specification
+# Cash Out API Specification (Updated)
 
 ## Endpoint
 `POST /api/v1/cashout/initiate`
@@ -23,7 +23,7 @@
 
 ### Field Descriptions
 - `uuid`: A unique identifier for the request (UUIDv4 format)
-- `signed_uuid`: Base64 encoded signature of the UUID
+- `signed_uuid`: Base64 encoded signature of the hashed UUID
 - `to_account`: The recipient's account number
 - `amount`: The amount to be transferred (positive number)
 - `currency`: The currency of the transaction (e.g., "SDG")
@@ -69,24 +69,6 @@
 }
 ```
 
-## Key Generation and Signing Process
-
-1. Key Generation:
-   - Generate an RSA key pair (2048 bits recommended)
-   - Store the private key securely
-   - Share the public key with the API provider
-
-2. Request Signing:
-   - Generate a UUIDv4 for each request
-   - Hash the UUID using SHA-256
-   - Sign the hashed UUID using the private key with PKCS1v15 padding
-   - Base64 encode the resulting signature
-
-3. Signature Verification (Server-side):
-   - Decode the Base64 `signed_uuid`
-   - Hash the provided `uuid` using SHA-256
-   - Verify the signature using the stored public key
-
 ## Error Codes
 - `malformed_request`: Invalid request format
 - `missing_fields`: Required fields are missing or invalid
@@ -99,12 +81,63 @@
 - `currency_not_supported`: The specified currency is not supported
 - `transaction_failed`: Unable to process the cash out request
 
+## Key Generation and Signing Process
+
+1. Key Generation:
+   - Generate an RSA key pair (2048 bits recommended)
+   - Store the private key securely
+   - Share the public key with the API provider
+
+2. Request Signing:
+   - Generate a UUIDv4 for each request
+   - Hash the UUID using SHA-256
+   - Sign the hashed UUID using the private key with PKCS1v15 padding and SHA-256 as the hash function
+   - Base64 encode the resulting signature
+
+3. Signature Verification (Server-side):
+   - Decode the Base64 `signed_uuid`
+   - Hash the provided `uuid` using SHA-256
+   - Verify the signature using the stored public key, PKCS1v15 padding, and SHA-256 as the hash function
+
+## Example Signing Process (Go)
+
+```go
+import (
+    "crypto"
+    "crypto/rand"
+    "crypto/rsa"
+    "crypto/sha256"
+    "encoding/base64"
+    "github.com/google/uuid"
+)
+
+func signRequest(privateKey *rsa.PrivateKey) (string, string, error) {
+    // Generate UUID
+    uuidStr := uuid.New().String()
+
+    // Hash the UUID
+    hash := sha256.Sum256([]byte(uuidStr))
+
+    // Sign the hashed UUID
+    signature, err := rsa.SignPKCS1v15(rand.Reader, privateKey, crypto.SHA256, hash[:])
+    if err != nil {
+        return "", "", err
+    }
+
+    // Base64 encode the signature
+    signedUUID := base64.StdEncoding.EncodeToString(signature)
+
+    return uuidStr, signedUUID, nil
+}
+```
+
 ## Notes
 - All requests must use HTTPS
 - The API uses idempotency based on the UUID to prevent duplicate transactions
 - The service provider must be pre-registered and have a valid public key stored on the server
 - The cash out provider must be either "nil" or "bok"
 - Currently, only "SDG" is supported as a valid currency
+- Always hash the UUID before signing to ensure consistent security practices
 
 
 # GetUserInfo API
