@@ -14,11 +14,20 @@
   "uuid": "string",
   "signed_uuid": "string",
   "to_account": "string",
-  "amount": number,
+  "amount": "number",
+  "beneficiary": {
+    "account_id": "string",
+    "full_name": "string",
+    "mobile": "string",
+    "provider": "string",
+    "address": "string",
+    "branch": "string"
+  },
   "currency": "string",
   "service_provider": "string",
   "cashout_provider": "string"
 }
+
 ```
 
 ### Field Descriptions
@@ -38,12 +47,11 @@
 
 ```json
 {
-  "status": "success",
   "code": "cashout_initiated",
   "message": "Cash out request processed successfully.",
   "data": {
     "transaction_id": "string",
-    "status": "pending",
+    "status": "Pending",
     "amount": number,
     "currency": "string",
     "timestamp": "string",
@@ -59,7 +67,6 @@
 
 ```json
 {
-  "status": "error",
   "code": "string",
   "message": "string",
   "details": "string",
@@ -172,7 +179,6 @@ func signRequest(privateKey *rsa.PrivateKey) (string, string, error) {
 
 ```json
 {
-  "status": "success",
   "code": "user_info_retrieved",
   "message": "User info retrieved successfully.",
   "data": {
@@ -194,7 +200,6 @@ func signRequest(privateKey *rsa.PrivateKey) (string, string, error) {
 
 ```json
 {
-  "status": "error",
   "code": "string",
   "message": "string",
   "details": "string",
