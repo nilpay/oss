@@ -22,7 +22,7 @@
     
     
       
-        <title>OSS specific documentation - Nilpay API Docs</title>
+        <title>Updated Cash Out API Specification - Nilpay API Docs</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#oss-specific-documentation" class="md-skip">
+        <a href="#updated-cash-out-api-specification" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OSS specific documentation
+              Updated Cash Out API Specification
             
           </span>
         </div>
@@ -366,8 +366,7 @@
                   
 
 
-<h1 id="oss-specific-documentation">OSS specific documentation</h1>
-<h1 id="cash-out-api-specification-updated">Cash Out API Specification (Updated)</h1>
+<h1 id="updated-cash-out-api-specification">Updated Cash Out API Specification</h1>
 <h2 id="endpoint">Endpoint</h2>
 <p><code>POST /api/v1/cashout/initiate</code></p>
 <h2 id="request-headers">Request Headers</h2>
@@ -378,8 +377,13 @@
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;to_account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;number&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">nu</span><span class="err">mber</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;notes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;service_provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;cashout_provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;beneficiary&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;account_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;full_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
@@ -388,20 +392,31 @@
 <span class="w">    </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;branch&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;service_provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;cashout_provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">  </span><span class="nt">&quot;payment_reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="field-descriptions">Field Descriptions</h3>
 <ul>
 <li><code>uuid</code>: A unique identifier for the request (UUIDv4 format)</li>
-<li><code>signed_uuid</code>: Base64 encoded signature of the hashed UUID</li>
-<li><code>to_account</code>: The recipient's account number</li>
-<li><code>amount</code>: The amount to be transferred (positive number)</li>
-<li><code>currency</code>: The currency of the transaction (e.g., "SDG")</li>
-<li><code>service_provider</code>: The identifier for the service provider</li>
-<li><code>cashout_provider</code>: The cash out provider (either "nil" or "bok")</li>
+<li><code>signed_uuid</code>: Base64 encoded signature of the UUID</li>
+<li><code>timestamp</code>: The timestamp of the request</li>
+<li><code>from_account</code>: The source account (optional, determined by service provider)</li>
+<li><code>to_account</code>: The recipient's account number (required)</li>
+<li><code>amount</code>: The amount to be transferred (positive number, required)</li>
+<li><code>currency</code>: The currency of the transaction (e.g., "SDG", optional, defaults to "SDG")</li>
+<li><code>notes</code>: Additional notes for the transaction (optional)</li>
+<li><code>service_provider</code>: The identifier for the service provider (required)</li>
+<li><code>cashout_provider</code>: The cash out provider (optional, either "nil" or "bok", defaults to "nil")</li>
+<li><code>beneficiary</code>: Details of the beneficiary (optional)</li>
+<li><code>payment_reference</code>: A reference for the payment (optional)</li>
+</ul>
+<h3 id="required-fields">Required Fields</h3>
+<ul>
+<li><code>uuid</code></li>
+<li><code>signed_uuid</code></li>
+<li><code>to_account</code></li>
+<li><code>amount</code></li>
+<li><code>service_provider</code></li>
 </ul>
 <h2 id="response">Response</h2>
 <h3 id="success-response">Success Response</h3>
@@ -510,9 +525,10 @@
 <li>The service provider must be pre-registered and have a valid public key stored on the server</li>
 <li>The cash out provider must be either "nil" or "bok"</li>
 <li>Currently, only "SDG" is supported as a valid currency</li>
-<li>Always hash the UUID before signing to ensure consistent security practices</li>
+<li>If not specified, the currency defaults to "SDG"</li>
+<li>If not specified, the cashout_provider defaults to "nil"</li>
 </ul>
-<h1 id="getuserinfo-api">GetUserInfo API</h1>
+<h1 id="updated-getuserinfo-api-specification">Updated GetUserInfo API Specification</h1>
 <h2 id="endpoint_1">Endpoint</h2>
 <p><code>POST /api/v1/user/info</code></p>
 <h2 id="request-headers_1">Request Headers</h2>
@@ -523,8 +539,24 @@
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;signed_uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;mobile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;service_provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;from_account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;to_account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">nu</span><span class="err">mber</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;notes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;service_provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;cashout_provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;beneficiary&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;account_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;full_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;mobile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;branch&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;payment_reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;mobile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="field-descriptions_1">Field Descriptions</h3>
@@ -533,6 +565,14 @@
 <li><code>signed_uuid</code>: Base64 encoded signature of the UUID</li>
 <li><code>mobile</code>: The mobile number of the user whose information is being requested</li>
 <li><code>service_provider</code>: The identifier for the service provider</li>
+<li>Other fields: Same as in the Cash Out API (included for consistency, but may not be used)</li>
+</ul>
+<h3 id="required-fields_1">Required Fields</h3>
+<ul>
+<li><code>uuid</code></li>
+<li><code>signed_uuid</code></li>
+<li><code>mobile</code></li>
+<li><code>service_provider</code></li>
 </ul>
 <h2 id="response_1">Response</h2>
 <h3 id="success-response_1">Success Response</h3>
@@ -575,7 +615,7 @@
 <li><code>missing_fields</code>: Required fields are missing or invalid</li>
 <li><code>service_provider_not_found</code>: The specified service provider does not exist</li>
 <li><code>authentication_error</code>: Signature verification failed</li>
-<li><code>transaction_failed</code>: Unable to retrieve user information</li>
+<li><code>transaction_failed</code>: Unable to retrieve user information (includes cases where the user is not found)</li>
 </ul>
 <h2 id="notes_1">Notes</h2>
 <ul>

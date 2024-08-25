@@ -1,6 +1,4 @@
-# OSS specific documentation
-
-# Cash Out API Specification (Updated)
+# Updated Cash Out API Specification
 
 ## Endpoint
 `POST /api/v1/cashout/initiate`
@@ -13,8 +11,13 @@
 {
   "uuid": "string",
   "signed_uuid": "string",
+  "timestamp": "string",
   "to_account": "string",
-  "amount": "number",
+  "amount": number,
+  "currency": "string",
+  "notes": "string",
+  "service_provider": "string",
+  "cashout_provider": "string",
   "beneficiary": {
     "account_id": "string",
     "full_name": "string",
@@ -23,21 +26,30 @@
     "address": "string",
     "branch": "string"
   },
-  "currency": "string",
-  "service_provider": "string",
-  "cashout_provider": "string"
+  "payment_reference": "string"
 }
-
 ```
 
 ### Field Descriptions
 - `uuid`: A unique identifier for the request (UUIDv4 format)
-- `signed_uuid`: Base64 encoded signature of the hashed UUID
-- `to_account`: The recipient's account number
-- `amount`: The amount to be transferred (positive number)
-- `currency`: The currency of the transaction (e.g., "SDG")
-- `service_provider`: The identifier for the service provider
-- `cashout_provider`: The cash out provider (either "nil" or "bok")
+- `signed_uuid`: Base64 encoded signature of the UUID
+- `timestamp`: The timestamp of the request
+- `from_account`: The source account (optional, determined by service provider)
+- `to_account`: The recipient's account number (required)
+- `amount`: The amount to be transferred (positive number, required)
+- `currency`: The currency of the transaction (e.g., "SDG", optional, defaults to "SDG")
+- `notes`: Additional notes for the transaction (optional)
+- `service_provider`: The identifier for the service provider (required)
+- `cashout_provider`: The cash out provider (optional, either "nil" or "bok", defaults to "nil")
+- `beneficiary`: Details of the beneficiary (optional)
+- `payment_reference`: A reference for the payment (optional)
+
+### Required Fields
+- `uuid`
+- `signed_uuid`
+- `to_account`
+- `amount`
+- `service_provider`
 
 ## Response
 
@@ -144,10 +156,10 @@ func signRequest(privateKey *rsa.PrivateKey) (string, string, error) {
 - The service provider must be pre-registered and have a valid public key stored on the server
 - The cash out provider must be either "nil" or "bok"
 - Currently, only "SDG" is supported as a valid currency
-- Always hash the UUID before signing to ensure consistent security practices
+- If not specified, the currency defaults to "SDG"
+- If not specified, the cashout_provider defaults to "nil"
 
-
-# GetUserInfo API
+# Updated GetUserInfo API Specification
 
 ## Endpoint
 `POST /api/v1/user/info`
@@ -160,8 +172,24 @@ func signRequest(privateKey *rsa.PrivateKey) (string, string, error) {
 {
   "uuid": "string",
   "signed_uuid": "string",
-  "mobile": "string",
-  "service_provider": "string"
+  "timestamp": "string",
+  "from_account": "string",
+  "to_account": "string",
+  "amount": number,
+  "currency": "string",
+  "notes": "string",
+  "service_provider": "string",
+  "cashout_provider": "string",
+  "beneficiary": {
+    "account_id": "string",
+    "full_name": "string",
+    "mobile": "string",
+    "provider": "string",
+    "address": "string",
+    "branch": "string"
+  },
+  "payment_reference": "string",
+  "mobile": "string"
 }
 ```
 
@@ -170,6 +198,13 @@ func signRequest(privateKey *rsa.PrivateKey) (string, string, error) {
 - `signed_uuid`: Base64 encoded signature of the UUID
 - `mobile`: The mobile number of the user whose information is being requested
 - `service_provider`: The identifier for the service provider
+- Other fields: Same as in the Cash Out API (included for consistency, but may not be used)
+
+### Required Fields
+- `uuid`
+- `signed_uuid`
+- `mobile`
+- `service_provider`
 
 ## Response
 
@@ -214,7 +249,7 @@ func signRequest(privateKey *rsa.PrivateKey) (string, string, error) {
 - `missing_fields`: Required fields are missing or invalid
 - `service_provider_not_found`: The specified service provider does not exist
 - `authentication_error`: Signature verification failed
-- `transaction_failed`: Unable to retrieve user information
+- `transaction_failed`: Unable to retrieve user information (includes cases where the user is not found)
 
 ## Notes
 - All requests must use HTTPS
