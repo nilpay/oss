@@ -1,4 +1,4 @@
-# Updated Cash Out API Specification
+# Cash Out API Specification for OSS Users
 
 ## Endpoint
 `POST /api/v1/cashout/initiate`
