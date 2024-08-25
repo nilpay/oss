@@ -319,3 +319,16 @@ Webhooks are sent as events occur. There is no specific rate limit, but consumer
 
 ## Support
 For any issues or questions regarding the webhook integration, please contact our support team at info@pynil.com.
+
+# Accessing the dashboard
+
+1. You can check your assigned dashboard by visitiing {baseURL}/admin (tailscale VPNed)
+
+![The dashboard](/dashboard.png)
+
+2. You are also able to check your assigned `service_provider` there, and upload your public key.
+
+![Public key and settings](/pubkey.png)
+
+3. Finally, you can also view all of the transactions that have been processed by your service provider.
+![Transactions](/transactions.png)
