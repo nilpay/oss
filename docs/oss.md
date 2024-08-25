@@ -172,23 +172,7 @@ func signRequest(privateKey *rsa.PrivateKey) (string, string, error) {
 {
   "uuid": "string",
   "signed_uuid": "string",
-  "timestamp": "string",
-  "from_account": "string",
-  "to_account": "string",
-  "amount": number,
-  "currency": "string",
-  "notes": "string",
   "service_provider": "string",
-  "cashout_provider": "string",
-  "beneficiary": {
-    "account_id": "string",
-    "full_name": "string",
-    "mobile": "string",
-    "provider": "string",
-    "address": "string",
-    "branch": "string"
-  },
-  "payment_reference": "string",
   "mobile": "string"
 }
 ```
@@ -198,7 +182,6 @@ func signRequest(privateKey *rsa.PrivateKey) (string, string, error) {
 - `signed_uuid`: Base64 encoded signature of the UUID
 - `mobile`: The mobile number of the user whose information is being requested
 - `service_provider`: The identifier for the service provider
-- Other fields: Same as in the Cash Out API (included for consistency, but may not be used)
 
 ### Required Fields
 - `uuid`
