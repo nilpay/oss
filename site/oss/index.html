@@ -392,7 +392,7 @@
 <span class="w">    </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;branch&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;service_provider_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">  </span><span class="nt">&quot;service_provider_transaction_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="field-descriptions">Field Descriptions</h3>
@@ -400,7 +400,6 @@
 <li><code>uuid</code>: A unique identifier for the request (UUIDv4 format)</li>
 <li><code>signed_uuid</code>: Base64 encoded signature of the UUID</li>
 <li><code>timestamp</code>: The timestamp of the request</li>
-<li><code>from_account</code>: The source account (optional, determined by service provider)</li>
 <li><code>to_account</code>: The recipient's account number (required)</li>
 <li><code>amount</code>: The amount to be transferred (positive number, required)</li>
 <li><code>currency</code>: The currency of the transaction (e.g., "SDG", optional, defaults to "SDG")</li>
@@ -408,7 +407,7 @@
 <li><code>service_provider</code>: The identifier for the service provider (required)</li>
 <li><code>cashout_provider</code>: The cash out provider (optional, either "nil" or "bok", defaults to "nil")</li>
 <li><code>beneficiary</code>: Details of the beneficiary (optional)</li>
-<li><code>service_provider_id</code>: An optional reference id from the service provider (in case service provider want to pass extra logic beyond uuid)</li>
+<li><code>service_provider_transaction_id</code>: An optional reference id from the service provider (in case service provider want to pass extra logic beyond uuid)</li>
 </ul>
 <h3 id="required-fields">Required Fields</h3>
 <ul>

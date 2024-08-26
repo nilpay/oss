@@ -26,7 +26,7 @@
     "address": "string",
     "branch": "string"
   },
-  "service_provider_id": "string"
+  "service_provider_transaction_id": "string"
 }
 ```
 
@@ -34,7 +34,6 @@
 - `uuid`: A unique identifier for the request (UUIDv4 format)
 - `signed_uuid`: Base64 encoded signature of the UUID
 - `timestamp`: The timestamp of the request
-- `from_account`: The source account (optional, determined by service provider)
 - `to_account`: The recipient's account number (required)
 - `amount`: The amount to be transferred (positive number, required)
 - `currency`: The currency of the transaction (e.g., "SDG", optional, defaults to "SDG")
@@ -42,7 +41,7 @@
 - `service_provider`: The identifier for the service provider (required)
 - `cashout_provider`: The cash out provider (optional, either "nil" or "bok", defaults to "nil")
 - `beneficiary`: Details of the beneficiary (optional)
-- `service_provider_id`: An optional reference id from the service provider (in case service provider want to pass extra logic beyond uuid)
+- `service_provider_transaction_id`: An optional reference id from the service provider (in case service provider want to pass extra logic beyond uuid)
 
 ### Required Fields
 - `uuid`
