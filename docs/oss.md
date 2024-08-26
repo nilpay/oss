@@ -376,6 +376,8 @@ For any issues or questions regarding the webhook integration, please contact ou
 
 # Accessing the dashboard
 
+Admin dashboard is where you can get all information assigned to your service provider. You can fetch previous transactions, upload your public key, and also fetch our webhook verfication key. It is available though /admin of your tailnet url.
+
 - You can check your assigned dashboard by visitiing {baseURL}/admin (tailscale VPNed)
 
 ![The dashboard](/assets/dashboard.png)
