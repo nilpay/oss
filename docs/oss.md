@@ -26,7 +26,7 @@
     "address": "string",
     "branch": "string"
   },
-  "payment_reference": "string"
+  "service_provider_id": "string"
 }
 ```
 
@@ -42,7 +42,7 @@
 - `service_provider`: The identifier for the service provider (required)
 - `cashout_provider`: The cash out provider (optional, either "nil" or "bok", defaults to "nil")
 - `beneficiary`: Details of the beneficiary (optional)
-- `payment_reference`: A reference for the payment (optional)
+- `service_provider_id`: An optional reference id from the service provider (in case service provider want to pass extra logic beyond uuid)
 
 ### Required Fields
 - `uuid`
@@ -306,13 +306,67 @@ This webhook sends real-time updates about the status of cash out transactions. 
 All webhook communications should be done over HTTPS to ensure data privacy in transit.
 
 
-## Best Practices for Webhook Consumers
+## Webhook Signature Verification Guide
 
-1. Respond quickly to the webhook with a 2xx status code. Process the data asynchronously if needed.
-2. Implement retry logic with exponential backoff for failed webhook deliveries.
-3. Store the `transaction_id` to prevent duplicate processing in case of repeated webhook deliveries.
-4. Validate all incoming data before processing.
-5. Be prepared to handle occasional out-of-order webhook deliveries.
+### Overview
+We sign all webhook payloads to ensure their authenticity. You should verify this signature before processing the webhook data.
+
+### Process
+1. We send a POST request to your webhook URL with the payload.
+2. The request includes a signature in the `X-Signature` header.
+3. You verify the signature using your Webhook Signing Key and the raw request body.
+
+### Implementation
+
+### Prerequisites
+- Your Webhook Signing Key (from your dashboard)
+- Ability to access HTTP headers and raw request body
+
+### Verification Function
+```go
+import (
+	"crypto"
+	"crypto/rsa"
+	"crypto/sha256"
+	"crypto/x509"
+	"encoding/base64"
+)
+
+func VerifySignature(publicKeyStr, message, signatureStr string) bool {
+	pubKeyBytes, _ := base64.StdEncoding.DecodeString(publicKeyStr)
+	pubKey, _ := x509.ParsePKIXPublicKey(pubKeyBytes)
+	rsaPubKey := pubKey.(*rsa.PublicKey)
+	sigBytes, _ := base64.StdEncoding.DecodeString(signatureStr)
+	hash := sha256.Sum256([]byte(message))
+	return rsa.VerifyPKCS1v15(rsaPubKey, crypto.SHA256, hash[:], sigBytes) == nil
+}
+```
+
+### Usage Example
+```go
+func handleWebhook(w http.ResponseWriter, r *http.Request) {
+	signature := r.Header.Get("X-Signature")
+	body, _ := ioutil.ReadAll(r.Body)
+	webhookSigningKey := "YOUR_WEBHOOK_SIGNING_KEY"
+
+	if VerifySignature(webhookSigningKey, string(body), signature) {
+		// Process valid webhook
+		w.WriteHeader(http.StatusOK)
+	} else {
+		http.Error(w, "Invalid signature", http.StatusUnauthorized)
+	}
+}
+```
+
+
+## Troubleshooting
+- Ensure correct Webhook Signing Key usage.
+- Use raw, unparsed request body for verification.
+- Verify correct `X-Signature` header extraction.
+- Check server configuration for webhook processing.
+
+For further assistance, contact our support team.
+
 
 ## Rate Limiting
 Webhooks are sent as events occur. There is no specific rate limit, but consumers should be prepared to handle varying volumes of incoming webhooks.

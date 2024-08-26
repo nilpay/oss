@@ -2,67 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://pynil.com/</loc>
-         <lastmod>2024-08-25</lastmod>
+         <lastmod>2024-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pynil.com/cashout/</loc>
-         <lastmod>2024-08-25</lastmod>
+         <lastmod>2024-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pynil.com/errors/</loc>
-         <lastmod>2024-08-25</lastmod>
+         <lastmod>2024-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pynil.com/get_user/</loc>
-         <lastmod>2024-08-25</lastmod>
+         <lastmod>2024-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pynil.com/keys_mgmt/</loc>
-         <lastmod>2024-08-25</lastmod>
+         <lastmod>2024-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pynil.com/oss/</loc>
-         <lastmod>2024-08-25</lastmod>
+         <lastmod>2024-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pynil.com/responses/</loc>
-         <lastmod>2024-08-25</lastmod>
+         <lastmod>2024-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pynil.com/security/</loc>
-         <lastmod>2024-08-25</lastmod>
+         <lastmod>2024-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pynil.com/status/</loc>
-         <lastmod>2024-08-25</lastmod>
+         <lastmod>2024-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pynil.com/topup/</loc>
-         <lastmod>2024-08-25</lastmod>
+         <lastmod>2024-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pynil.com/versioning/</loc>
-         <lastmod>2024-08-25</lastmod>
+         <lastmod>2024-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pynil.com/vpn/</loc>
-         <lastmod>2024-08-25</lastmod>
+         <lastmod>2024-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pynil.com/webhooks/</loc>
-         <lastmod>2024-08-25</lastmod>
+         <lastmod>2024-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

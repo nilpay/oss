@@ -392,7 +392,7 @@
 <span class="w">    </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;branch&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;payment_reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">  </span><span class="nt">&quot;service_provider_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="field-descriptions">Field Descriptions</h3>
@@ -408,7 +408,7 @@
 <li><code>service_provider</code>: The identifier for the service provider (required)</li>
 <li><code>cashout_provider</code>: The cash out provider (optional, either "nil" or "bok", defaults to "nil")</li>
 <li><code>beneficiary</code>: Details of the beneficiary (optional)</li>
-<li><code>payment_reference</code>: A reference for the payment (optional)</li>
+<li><code>service_provider_id</code>: An optional reference id from the service provider (in case service provider want to pass extra logic beyond uuid)</li>
 </ul>
 <h3 id="required-fields">Required Fields</h3>
 <ul>
@@ -664,14 +664,61 @@
 <h2 id="security-considerations">Security Considerations</h2>
 <h3 id="https">HTTPS</h3>
 <p>All webhook communications should be done over HTTPS to ensure data privacy in transit.</p>
-<h2 id="best-practices-for-webhook-consumers">Best Practices for Webhook Consumers</h2>
+<h2 id="webhook-signature-verification-guide">Webhook Signature Verification Guide</h2>
+<h3 id="overview_1">Overview</h3>
+<p>We sign all webhook payloads to ensure their authenticity. You should verify this signature before processing the webhook data.</p>
+<h3 id="process">Process</h3>
 <ol>
-<li>Respond quickly to the webhook with a 2xx status code. Process the data asynchronously if needed.</li>
-<li>Implement retry logic with exponential backoff for failed webhook deliveries.</li>
-<li>Store the <code>transaction_id</code> to prevent duplicate processing in case of repeated webhook deliveries.</li>
-<li>Validate all incoming data before processing.</li>
-<li>Be prepared to handle occasional out-of-order webhook deliveries.</li>
+<li>We send a POST request to your webhook URL with the payload.</li>
+<li>The request includes a signature in the <code>X-Signature</code> header.</li>
+<li>You verify the signature using your Webhook Signing Key and the raw request body.</li>
 </ol>
+<h3 id="implementation">Implementation</h3>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Your Webhook Signing Key (from your dashboard)</li>
+<li>Ability to access HTTP headers and raw request body</li>
+</ul>
+<h3 id="verification-function">Verification Function</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;crypto&quot;</span>
+<span class="w">    </span><span class="s">&quot;crypto/rsa&quot;</span>
+<span class="w">    </span><span class="s">&quot;crypto/sha256&quot;</span>
+<span class="w">    </span><span class="s">&quot;crypto/x509&quot;</span>
+<span class="w">    </span><span class="s">&quot;encoding/base64&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">VerifySignature</span><span class="p">(</span><span class="nx">publicKeyStr</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="p">,</span><span class="w"> </span><span class="nx">signatureStr</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">pubKeyBytes</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">base64</span><span class="p">.</span><span class="nx">StdEncoding</span><span class="p">.</span><span class="nx">DecodeString</span><span class="p">(</span><span class="nx">publicKeyStr</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">pubKey</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">x509</span><span class="p">.</span><span class="nx">ParsePKIXPublicKey</span><span class="p">(</span><span class="nx">pubKeyBytes</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">rsaPubKey</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">pubKey</span><span class="p">.(</span><span class="o">*</span><span class="nx">rsa</span><span class="p">.</span><span class="nx">PublicKey</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">sigBytes</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">base64</span><span class="p">.</span><span class="nx">StdEncoding</span><span class="p">.</span><span class="nx">DecodeString</span><span class="p">(</span><span class="nx">signatureStr</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">hash</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">sha256</span><span class="p">.</span><span class="nx">Sum256</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">message</span><span class="p">))</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">rsa</span><span class="p">.</span><span class="nx">VerifyPKCS1v15</span><span class="p">(</span><span class="nx">rsaPubKey</span><span class="p">,</span><span class="w"> </span><span class="nx">crypto</span><span class="p">.</span><span class="nx">SHA256</span><span class="p">,</span><span class="w"> </span><span class="nx">hash</span><span class="p">[:],</span><span class="w"> </span><span class="nx">sigBytes</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">nil</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="usage-example">Usage Example</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">handleWebhook</span><span class="p">(</span><span class="nx">w</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">signature</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nx">Get</span><span class="p">(</span><span class="s">&quot;X-Signature&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">body</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">ioutil</span><span class="p">.</span><span class="nx">ReadAll</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">webhookSigningKey</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&quot;YOUR_WEBHOOK_SIGNING_KEY&quot;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">VerifySignature</span><span class="p">(</span><span class="nx">webhookSigningKey</span><span class="p">,</span><span class="w"> </span><span class="nb">string</span><span class="p">(</span><span class="nx">body</span><span class="p">),</span><span class="w"> </span><span class="nx">signature</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Process valid webhook</span>
+<span class="w">        </span><span class="nx">w</span><span class="p">.</span><span class="nx">WriteHeader</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusOK</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">http</span><span class="p">.</span><span class="nx">Error</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Invalid signature&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">StatusUnauthorized</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ul>
+<li>Ensure correct Webhook Signing Key usage.</li>
+<li>Use raw, unparsed request body for verification.</li>
+<li>Verify correct <code>X-Signature</code> header extraction.</li>
+<li>Check server configuration for webhook processing.</li>
+</ul>
+<p>For further assistance, contact our support team.</p>
 <h2 id="rate-limiting">Rate Limiting</h2>
 <p>Webhooks are sent as events occur. There is no specific rate limit, but consumers should be prepared to handle varying volumes of incoming webhooks.</p>
 <h2 id="support">Support</h2>
